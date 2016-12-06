@@ -1,13 +1,17 @@
 "use strict";
 
 import View from './view';
-import LocalStorage from './local_storage'
+import Storage from './storage'
 import _ from 'lodash';
 
+const Analytics = (() => {
+  function Analytics(event) {
+    let pages = Storage.get('pages') || []
+    pages.push(new View(event.target.URL, new Date()));
+    Storage.add('pages', pages);
+    console.log(_.uniqBy(pages, 'url'));
+  }
+  return Analytics;
+})();
 
-window.onload = (event) => {
-  let pages = LocalStorage.get('pages') || []
-  pages.push(new View(event.target.URL, new Date()));
-  LocalStorage.add('pages', pages);
-  console.log(_.uniqBy(pages, 'url'));
-}
+window.addEventListener('load', Analytics);
