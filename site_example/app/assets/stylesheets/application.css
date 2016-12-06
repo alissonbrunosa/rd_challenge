@@ -11,5 +11,114 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require bootstrap
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+body {
+  background-color: #f4f4f4;
+  margin-top: 40px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.thumbnail {
+  padding: 0px;
+  text-align: center;
+}
+
+.thumbnail .top {
+  height: 280px;
+  overflow-x: hidden;
+}
+
+.thumbnail .top > img {
+  max-width: 100%;
+  margin: 0;
+  height: auto;
+}
+
+.thumbnail .caption {
+  padding: 15px 15px 0 15px;
+}
+
+.thumbnail .caption p {
+  color: #555;
+}
+
+.product-name {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 700;
+}
+
+.product-name a {
+  color: #ef5285;
+  cursor: pointer;
+}
+
+.logo {
+  padding: 0px;
+  margin-top: 0px;    
+}
+
+.side-bar-menu {
+  padding: 0px;
+  list-style:none; 
+  list-style-type: none;
+}
+
+.side-bar-menu > li {
+  margin-bottom: 5px;
+}
+
+.side-bar-menu > li > a {
+  text-decoration: none;
+  color: #555555;
+}
+
+.side-bar-menu > li > a:hover {
+  text-decoration: none;
+  color: #ef5285;
+}
+
+.side-bar-menu li.active a {
+  color: #ef5285;
+  font-weight: bold;
+}
+
+label {
+  font-weight: normal;
+  color: #555555;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.flat-btn {
+  color: #ef5285;
+  background-color: transparent;
+  border-color: #ef5285;
+}
+
+.flat-btn:hover {
+  color: #FFFFFF;
+  background-color: #ef5285;
+}

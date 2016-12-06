@@ -1,2 +1,19 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-sm-6 col-md-6">
+      <div class="thumbnail">
+        <div class="top">
+          <img src="https://static.carrefourdigital.com.br/medias/sys_master/images/images/hd8/h3b/h00/h00/8860819652638.jpg" class="img-responsive">
+        </div>
+        <div class="caption">
+          <h5 class="product-name">
+            <%= link_to product.name, product_path(product) %>
+          </h5>
+          <p>
+            <%= product.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

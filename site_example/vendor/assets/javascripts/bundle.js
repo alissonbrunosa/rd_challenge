@@ -17074,9 +17074,9 @@ var _view = require('./view');
 
 var _view2 = _interopRequireDefault(_view);
 
-var _local_storage = require('./local_storage');
+var _storage = require('./storage');
 
-var _local_storage2 = _interopRequireDefault(_local_storage);
+var _storage2 = _interopRequireDefault(_storage);
 
 var _lodash = require('lodash');
 
@@ -17084,14 +17084,19 @@ var _lodash2 = _interopRequireDefault(_lodash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.onload = function (event) {
-  var pages = _local_storage2.default.get('pages') || [];
-  pages.push(new _view2.default(event.target.URL, new Date()));
-  _local_storage2.default.add('pages', pages);
-  console.log(_lodash2.default.uniqBy(pages, 'url'));
-};
+var Analytics = function () {
+  function Analytics(event) {
+    var pages = _storage2.default.get('pages') || [];
+    pages.push(new _view2.default(event.target.URL, new Date()));
+    _storage2.default.add('pages', pages);
+    console.log(_lodash2.default.uniqBy(pages, 'url'));
+  }
+  return Analytics;
+}();
 
-},{"./local_storage":3,"./view":4,"lodash":1}],3:[function(require,module,exports){
+window.addEventListener('load', Analytics);
+
+},{"./storage":3,"./view":4,"lodash":1}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17102,18 +17107,20 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var LocalStorage = function () {
-  function LocalStorage() {
-    _classCallCheck(this, LocalStorage);
+var Storage = function () {
+  function Storage() {
+    _classCallCheck(this, Storage);
 
-    if (localStorage) {
+    if (sessionStorage) {
+      this.store = sessionStorage;
+    } else if (localStorage) {
       this.store = localStorage;
     } else {
-      throw "localStorage is not defined";
+      throw "Storage is not defined";
     }
   }
 
-  _createClass(LocalStorage, [{
+  _createClass(Storage, [{
     key: "add",
     value: function add(key, object) {
       var str_obj = JSON.stringify(object);
@@ -17126,12 +17133,17 @@ var LocalStorage = function () {
       if (str_obj === null) return;
       return JSON.parse(str_obj);
     }
+  }, {
+    key: "clear",
+    value: function clear() {
+      this.store.clear();
+    }
   }]);
 
-  return LocalStorage;
+  return Storage;
 }();
 
-exports.default = new LocalStorage();
+exports.default = new Storage();
 
 },{}],4:[function(require,module,exports){
 "use strict";
