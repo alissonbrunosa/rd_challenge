@@ -3,6 +3,6 @@
 export default class View {
   constructor(url, datetime) {
     this.url = url;
-    this.datetime = datetime;
+    this.visited_at = datetime;
   }
 }
