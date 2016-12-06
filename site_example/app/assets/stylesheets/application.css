@@ -26,11 +26,12 @@ body {
 .thumbnail {
   padding: 0px;
   text-align: center;
+  height: 445px;
 }
 
 .thumbnail .top {
-  height: 280px;
-  overflow-x: hidden;
+  position: relative;
+  border-bottom: 1px solid #ddd;
 }
 
 .thumbnail .top > img {

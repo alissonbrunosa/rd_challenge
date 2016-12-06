@@ -1,9 +1,11 @@
 <div class="row">
   <% @products.each do |product| %>
-    <div class="col-sm-6 col-md-6">
+    <div class="col-sm-12 col-md-4">
       <div class="thumbnail">
         <div class="top">
-          <img src="https://static.carrefourdigital.com.br/medias/sys_master/images/images/hd8/h3b/h00/h00/8860819652638.jpg" class="img-responsive">
+          <div class="image">  
+            <img src="http://cdn1.knowyourmobile.com/sites/knowyourmobilecom/files/styles/gallery_wide/public/2016/02/imgp6315_dxo.jpg?itok=BH-rAplp" class="img-responsive">
+          </div>
         </div>
         <div class="caption">
           <h5 class="product-name">
@@ -12,6 +14,7 @@
           <p>
             <%= product.description %>
           </p>
+          <h3 class="product-price">R$ <%= product.price %></h3>
         </div>
       </div>
     </div>
