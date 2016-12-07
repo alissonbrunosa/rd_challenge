@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206170735) do
+ActiveRecord::Schema.define(version: 20161207143236) do
 
   create_table "views", force: :cascade do |t|
     t.string   "url"
@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 20161206170735) do
 
   create_table "visitors", force: :cascade do |t|
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "session_token"
+    t.index ["session_token"], name: "index_visitors_on_session_token", unique: true
   end
 
 end

@@ -1,5 +1,5 @@
 class VisitorsController < ApplicationController
-  before_action :set_visitor, only: [:show, :edit, :update, :destroy]
+  before_action :set_visitor, only: [:show]
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
@@ -10,11 +10,11 @@ class VisitorsController < ApplicationController
   end
 
   def create
-    request = Request.new(visitor_params)
-    if request.save
-      render json: {}, status: :ok
+    @req = Request.new(visitor_params)
+    if @req.save
+      render :show, status: :created
     else
-      render json: {}, status: :unprocessable_entity
+      render json: { message: "Could not register visitor." }, status: :unprocessable_entity
     end
   end
 
@@ -24,6 +24,6 @@ class VisitorsController < ApplicationController
     end
 
     def visitor_params
-      params.permit(:email, views: [:url, :visited_at])
+      params.permit(:email, views: [:id, :url, :visited_at])
     end
 end

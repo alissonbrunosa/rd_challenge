@@ -1,7 +1,7 @@
 "use strict";
 import Analytics from './analytics'
 
-const analytics = new Analytics('http://localhost:30001/visitors.json');
+const analytics = new Analytics();
 window.addEventListener('load', (event) => {
   analytics.register(event.target.URL);
   let forms = document.getElementsByTagName('form');
@@ -10,7 +10,8 @@ window.addEventListener('load', (event) => {
     let email_field = form.querySelector('input[type="email"]');
     if(email_field) {
       form.addEventListener('submit', (event) => {
-        analytics.send(email_field.value);
+        event.preventDefault();
+        analytics.send(email_field.value, () => { event.target.submit() });
       });
     }
   });

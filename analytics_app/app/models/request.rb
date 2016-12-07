@@ -19,8 +19,9 @@ class Request
 
   private
     def persist!
-      @visitor = Visitor.new(email: email)
+      @visitor = Visitor.where(email: email).first_or_create
       views.each do |view| 
+        next if(view[:id].present? && @visitor.views.exists?(view[:id]))
         @visitor.views.build(view)
       end
       @visitor.save!
