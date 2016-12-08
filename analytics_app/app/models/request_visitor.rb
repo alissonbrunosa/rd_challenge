@@ -1,4 +1,4 @@
-class Request 
+class RequestVisitor
   include ActiveModel::Model
   attr_accessor :email, :views, :visitor
 

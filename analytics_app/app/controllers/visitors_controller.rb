@@ -10,7 +10,7 @@ class VisitorsController < ApplicationController
   end
 
   def create
-    @req = Request.new(visitor_params)
+    @req = RequestVisitor.new(visitor_params)
     if @req.save
       render :show, status: :created
     else
