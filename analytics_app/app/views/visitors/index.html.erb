@@ -1,5 +1,7 @@
+<div class="col-lg-12">
+  <h1 class="page-header">Visitantes</h1>
+</div>
 <div class="row">
-  <h3>Visitantes</h1>
   <% @visitors.each do |visitor| %>
     <div class="visitor col-xs-12 col-md-5">
       <%= link_to(visitor_path(visitor)) do %>
