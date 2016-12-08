@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AnalyticsApp</title>
+    <title>Cool Analytics</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-3 right-border">
+            <h1 class="logo">Cool Analytics</h1>
+            <ul class="side-bar-menu">
+              <li class="active">
+                <%= link_to 'Home', root_path %>
+              </li>
+              <li class="active">
+                <%= link_to 'Visitors', visitors_path %>
+              </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-8">
+          <%= notice %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

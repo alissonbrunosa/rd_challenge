@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:view] = "Visualizado em %d/%m/%Y às %I:%M:%S (%p)"

@@ -11,5 +11,97 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require bootstrap
+ *= require circle
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+body {
+  background-color: #f4f4f4;
+  margin-top: 40px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.circle {
+  max-width: 200px;
+  margin-right: 50px;
+  float: left;
+  text-align: center;
+}
+
+.circle h5 {
+  text-transform: uppercase;
+}
+
+.row h3 {
+  margin-top: 0px;
+}
+
+.row .visitor {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.visitor {
+  position: relative;
+  display: block;
+  background-color: #FFF;
+  max-height: 55px;
+}
+
+.visitor .visitor-avatar, .visitor .visitor-name {
+  height: 55px;
+  margin-right: 10px;
+  float: left;
+}
+
+.visitor .visitor-name {
+  margin: auto;
+}
+
+.logo {
+  padding: 0px;
+  margin-top: 0px;    
+}
+
+.side-bar-menu {
+  padding: 0px;
+  list-style:none; 
+  list-style-type: none;
+}
+
+.side-bar-menu > li {
+  margin-bottom: 5px;
+}
+
+.side-bar-menu > li > a {
+  text-decoration: none;
+  color: #555555;
+}
+
+.side-bar-menu > li > a:hover {
+  text-decoration: none;
+  color: #ef5285;
+}
+
+.side-bar-menu li.active a {
+  color: #ef5285;
+  font-weight: bold;
+}
+
+
+.flat-btn {
+  color: #ef5285;
+  background-color: transparent;
+  border-color: #ef5285;
+}
+
+.flat-btn:hover {
+  color: #FFFFFF;
+  background-color: #ef5285;
+}

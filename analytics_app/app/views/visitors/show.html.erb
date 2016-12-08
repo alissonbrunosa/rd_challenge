@@ -1,10 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div>
+  <img src="<%= gravatar(@visitor.email)%>" />
   <strong>Email:</strong>
   <%= @visitor.email %>
-  <h1>Paginas Visitadas</h1>
-  <table>
+</div>
+<hr>
+<h4>Paginas Visitadas</h4>
+<% @visitor.views_by_day.each do |day, views| %>
+  <table class="table">
+    <caption><%= day.strftime('%d/%m/%Y') %></caption>
     <thead>
       <tr>
         <th>URL</th>
@@ -12,13 +17,12 @@
       </tr>
     </thead>
     <tbody>
-      <% @visitor.views.each do |v| %>
+      <% views.each do |v| %>
         <tr>
-          <td><%= v.url %></td>
-          <td><%= v.visited_at %></td>
-         </tr> 
+          <td><%= link_to v.url, v.url, target: '_blank' %></td>
+          <td><%= v.visited_at.to_s(:view) %></td>
+        </tr> 
       <% end %>    
     </tbody>
   </table>
-</p>
-<%= link_to 'Back', visitors_path %>
+<% end %>
