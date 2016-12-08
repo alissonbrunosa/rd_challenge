@@ -123,3 +123,33 @@ label {
   color: #FFFFFF;
   background-color: #ef5285;
 }
+
+.banner, .description {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.banner {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.description {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #FFF;
+}
+
+.banner h1, .description h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: #555;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
