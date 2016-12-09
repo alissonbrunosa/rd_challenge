@@ -80,15 +80,6 @@ body {
   background-color: #ef5285;
 }
 
-.breadcrumb {
-  border-radius: 0;
-  padding: 10px 15px;
-  background: #e9ecf2;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-  margin: 0;
-}
-
-
 .navbar-header .navbar-brand {
 	color: #fff;
 	font-size: 16px;
@@ -125,20 +116,7 @@ body {
 	box-shadow: inset 0px 0px 0px 1px #30a5ff;
 }
 
-
-.user-menu {
-	display: inline-block;
-	margin-top: 14px;
-	margin-right: 10px;
-	float: right;
-	list-style: none;
-	padding: 0;
-}
-
-.user-menu a {
-	color: #fff;
-}
-
-.user-menu a:hover, .user-menu a:focus {
-	text-decoration: none;
+.navbar-inverse .navbar-nav > .active > a {
+  color: #ef5285;
+  font-weight: 700;
 }
