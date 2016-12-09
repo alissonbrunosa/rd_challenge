@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bundle
+//= require analytics.min
 //= require_tree .
