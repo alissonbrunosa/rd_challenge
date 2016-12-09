@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe Visitor, type: :model do
   context "validations" do
-    context 'invalid' do
+    context 'when not valid' do
       it "require email be set" do
-        visitor = FactoryGirl.build(:visitor, email: nil)
+        visitor = build(:visitor, email: nil)
         expect(visitor).to have(1).error_on(:email)
       end
     end
