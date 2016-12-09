@@ -4,7 +4,8 @@
   "description": "Track all pages visited by the user.",
   "main": "index.js",
   "scripts": {
-    "build": "gulp js"
+    "dist": "gulp js",
+    "test": "karma start spec/karma.conf.js"
   },
   "keywords": [
     "analytics"
@@ -18,7 +19,13 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-util": "^3.0.7",
-    "vinyl-source-stream": "^1.1.0"
+    "jasmine": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "axios": "^0.15.3",

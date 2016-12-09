@@ -11,6 +11,6 @@ gulp.task('js', function() {
     .on('error', function(e){
       gutil.log(e); 
     })
-    .pipe(source('analytics.min.js'))
-    .pipe(gulp.dest('../site_example/vendor/assets/javascripts'))
+    .pipe(source('analytics.js'))
+    .pipe(gulp.dest('dist'))
 });

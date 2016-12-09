@@ -8,7 +8,7 @@ import moment from 'moment';
 
 export default class Analytics {
   constructor() {
-    this.service = new Service('http://localhost:30001');
+    this.service = new Service('http://localhost:3000');
     this.visitor = Storage.get('visitor') || this.init_visitor();
   }
 

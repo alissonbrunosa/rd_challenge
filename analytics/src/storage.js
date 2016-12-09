@@ -23,6 +23,10 @@ class Storage {
   clear() {
     this.store.clear();
   }
+
+  getStore() {
+    return this.store;
+  }
 }
 
 export default new Storage();
