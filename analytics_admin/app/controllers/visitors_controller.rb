@@ -14,7 +14,7 @@ class VisitorsController < ApplicationController
     if @req.save
       render :show, status: :created
     else
-      render json: { message: "Could not register visitor." }, status: :unprocessable_entity
+      render json: { message: "Não foi possivel registar o visitante." }, status: :unprocessable_entity
     end
   end
 
