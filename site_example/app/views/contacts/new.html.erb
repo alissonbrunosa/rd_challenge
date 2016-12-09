@@ -1,17 +1,18 @@
-<div class="col-md-8">
-<h1>New Contact</h1>
-<%= form_for(:contact, url: contact_path, html: { class: "contact-form form" }) do |f| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-      <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<div class="col-lg-12">
+  <h1 class="page-header">Contato</h1>
+</div>
+<div class="col-md-8 col-md-offset-2">
+  <%= form_for(:contact, url: contact_path, html: { class: "contact-form form" }) do |f| %>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+        <ul>
+          <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
@@ -34,9 +35,8 @@
     <%= f.label :message %>
     <%= f.text_area :message, rows: 4, class: "form-control", required: 'required' %>
   </div>
-
   <div class="actions">
-    <%= f.submit nil, class: "btn flat-btn" %>
+    <%= f.submit "Enviar mensagem", class: "btn flat-btn", id: :contact_submit %>
   </div>
-<% end %>
+  <% end %>
 </div>

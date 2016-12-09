@@ -1,10 +1,13 @@
+<div class="col-lg-12">
+  <h1 class="page-header">Produtos</h1>
+</div>
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-sm-12 col-md-4">
       <div class="thumbnail">
         <div class="top">
           <div class="image">  
-            <img src="http://cdn1.knowyourmobile.com/sites/knowyourmobilecom/files/styles/gallery_wide/public/2016/02/imgp6315_dxo.jpg?itok=BH-rAplp" class="img-responsive">
+            <img src="<%= product.image %>" class="img-responsive">
           </div>
         </div>
         <div class="caption">

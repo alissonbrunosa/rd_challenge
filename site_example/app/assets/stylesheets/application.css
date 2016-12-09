@@ -17,7 +17,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 body {
   background-color: #f4f4f4;
-  margin-top: 40px;
+  padding-top: 50px;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.55;
@@ -26,7 +26,7 @@ body {
 .thumbnail {
   padding: 0px;
   text-align: center;
-  height: 445px;
+  height: 400px;
 }
 
 .thumbnail .top {
@@ -152,4 +152,50 @@ label {
 .heading {
   text-align: center;
   margin-bottom: 40px;
+}
+
+
+.navbar-header .navbar-brand {
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.navbar-header .navbar-brand span {
+	color: #ef5285;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #ef5285;
+  background-color: transparent;
+}
+
+.navbar {
+	border: 0;
+}
+
+.navbar input {
+	border: 0;
+	background: #444;
+	color: #fff;
+}
+
+.navbar input:focus {
+	color: #fff;
+	background: #555;
+	border: 1px solid #30a5ff;
+	outline: 0;
+	box-shadow: inset 0px 0px 0px 1px #30a5ff;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  color: #ef5285;
+  font-weight: 700;
+}
+
+.page-header {
+  text-align: center;
 }
